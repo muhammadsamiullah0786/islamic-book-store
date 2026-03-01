@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Islamic Book Store — Cart</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="logo">📚</span><span>Islamic Book Store<small>Cart</small></span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn primary" href="checkout.html">Checkout</a>
+      <label class="btn menu-btn" for="menuToggle">Menu</label>
+    </div>
+  </div>
+  <input id="menuToggle" type="checkbox" />
+  <div class="menu-panel"><div class="container">
+    <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="checkout.html">Checkout</a>
+  </div></div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="container">
+      <div class="breadcrumb">Home / Cart</div>
+      <h1>Your Cart</h1>
+      <div class="muted">Review items before checkout.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="display:grid; grid-template-columns: 1.4fr .6fr; gap:14px;">
+      <div class="card pad">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div style="display:flex; gap:10px; align-items:center;">
+                  <img src="assets/book-1.jpg" alt="Book" style="width:54px; height:54px; object-fit:cover; border-radius:12px; border:1px solid var(--line);">
+                  <div>
+                    <strong>Riyad-us-Saliheen</strong><br>
+                    <span class="muted" style="font-size:12px;">Hadith</span>
+                  </div>
+                </div>
+              </td>
+              <td>PKR 3,499</td>
+              <td>
+                <div class="qty">
+                  <button type="button">−</button>
+                  <strong>1</strong>
+                  <button type="button">+</button>
+                </div>
+              </td>
+              <td><strong>PKR 3,499</strong></td>
+              <td><a class="btn small danger" href="#">Remove</a></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex; gap:10px; align-items:center;">
+                  <img src="assets/book-2.jpg" alt="Book" style="width:54px; height:54px; object-fit:cover; border-radius:12px; border:1px solid var(--line);">
+                  <div>
+                    <strong>Ar-Raheeq Al-Makhtum</strong><br>
+                    <span class="muted" style="font-size:12px;">Seerah</span>
+                  </div>
+                </div>
+              </td>
+              <td>PKR 2,999</td>
+              <td>
+                <div class="qty">
+                  <button type="button">−</button>
+                  <strong>1</strong>
+                  <button type="button">+</button>
+                </div>
+              </td>
+              <td><strong>PKR 2,999</strong></td>
+              <td><a class="btn small danger" href="#">Remove</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="hr"></div>
+
+        <div class="row">
+          <div class="field">
+            <label>Coupon code</label>
+            <input class="input" placeholder="e.g. RAMADAN10" />
+          </div>
+          <div class="field">
+            <label>&nbsp;</label>
+            <button class="btn" type="button">Apply</button>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="shop.html">Continue shopping</a>
+          <a class="btn primary" href="checkout.html">Proceed to checkout</a>
+        </div>
+      </div>
+
+      <aside class="card pad">
+        <h3 style="margin:0 0 10px;">Summary</h3>
+        <div style="display:flex; justify-content:space-between;"><span class="muted">Subtotal</span><strong>PKR 6,498</strong></div>
+        <div style="display:flex; justify-content:space-between; margin-top:8px;"><span class="muted">Shipping</span><strong>PKR 250</strong></div>
+        <div style="display:flex; justify-content:space-between; margin-top:8px;"><span class="muted">Discount</span><strong>PKR 0</strong></div>
+        <div class="hr"></div>
+        <div style="display:flex; justify-content:space-between;"><span>Total</span><strong style="font-size:20px;">PKR 6,748</strong></div>
+        <div style="height:12px"></div>
+        <a class="btn primary" style="width:100%" href="checkout.html">Checkout</a>
+        <div style="height:10px"></div>
+        <span class="badge">Secure payment</span>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+    <span class="muted">© 2026 Islamic Book Store.</span>
+    <span class="muted"><a href="faq.html">Help</a> • <a href="contact.html">Contact</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

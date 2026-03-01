@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Islamic Book Store — Shop</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="logo">📚</span><span>Islamic Book Store<small>Shop</small></span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn" href="cart.html">Cart</a>
+      <a class="btn primary" href="account.html">Account</a>
+      <label class="btn menu-btn" for="menuToggle">Menu</label>
+    </div>
+  </div>
+  <input id="menuToggle" type="checkbox" />
+  <div class="menu-panel">
+    <div class="container">
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="cart.html">Cart</a><a href="account.html">Account</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="container">
+      <div class="breadcrumb">Home / Shop</div>
+      <h1>Shop</h1>
+      <div class="muted">Browse categories, filter by price, author, and rating.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container shop-layout">
+      <aside class="card sidebar">
+        <h3>Filters</h3>
+
+        <div class="field">
+          <label>Search</label>
+          <input class="input" placeholder="e.g. Tafsir, Seerah, Salah…" />
+        </div>
+
+        <div class="field">
+          <label>Category</label>
+          <select>
+            <option>All</option>
+            <option>Qur'an</option>
+            <option>Tafsir</option>
+            <option>Hadith</option>
+            <option>Seerah</option>
+            <option>Fiqh</option>
+            <option>Kids</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label>Min (PKR)</label>
+            <input class="input" placeholder="0" />
+          </div>
+          <div class="field">
+            <label>Max (PKR)</label>
+            <input class="input" placeholder="20000" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Rating</label>
+          <select>
+            <option>Any</option>
+            <option>4★ & up</option>
+            <option>3★ & up</option>
+          </select>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+          <button class="btn primary" type="button">Apply</button>
+          <button class="btn" type="button">Reset</button>
+        </div>
+      </aside>
+
+      <section>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+          <span class="badge">Showing 12 items</span>
+          <div class="row" style="max-width:420px; width:100%">
+            <select>
+              <option>Sort: Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Rating</option>
+              <option>Newest</option>
+            </select>
+            <a class="btn" href="cart.html">Go to cart</a>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="grid-3">
+          <!-- Repeat product cards -->
+          <article class="card product">
+            <div class="img"><img src="assets/book-1.jpg" alt="Book"></div>
+            <div class="body">
+              <span class="chip">Hadith</span>
+              <h3>Riyad-us-Saliheen</h3>
+              <div class="meta"><span class="stars">★★★★★</span><span class="price">PKR 3,499</span></div>
+              <div class="actions">
+                <a class="btn small" href="product.html">Details</a>
+                <a class="btn small primary" href="cart.html">Add</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card product">
+            <div class="img"><img src="assets/book-2.jpg" alt="Book"></div>
+            <div class="body">
+              <span class="chip">Seerah</span>
+              <h3>Ar-Raheeq Al-Makhtum</h3>
+              <div class="meta"><span class="stars">★★★★☆</span><span class="price">PKR 2,999</span></div>
+              <div class="actions">
+                <a class="btn small" href="product.html">Details</a>
+                <a class="btn small primary" href="cart.html">Add</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card product">
+            <div class="img"><img src="assets/book-3.jpg" alt="Book"></div>
+            <div class="body">
+              <span class="chip">Tafsir</span>
+              <h3>Tafsir Ibn Kathir (Set)</h3>
+              <div class="meta"><span class="stars">★★★★★</span><span class="price">PKR 12,999</span></div>
+              <div class="actions">
+                <a class="btn small" href="product.html">Details</a>
+                <a class="btn small primary" href="cart.html">Add</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card product">
+            <div class="img"><img src="assets/book-1.jpg" alt="Book"></div>
+            <div class="body">
+              <span class="chip">Fiqh</span>
+              <h3>Essentials of Salah</h3>
+              <div class="meta"><span class="stars">★★★★☆</span><span class="price">PKR 1,250</span></div>
+              <div class="actions">
+                <a class="btn small" href="product.html">Details</a>
+                <a class="btn small primary" href="cart.html">Add</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card product">
+            <div class="img"><img src="assets/book-2.jpg" alt="Book"></div>
+            <div class="body">
+              <span class="chip">Qur'an</span>
+              <h3>Qur'an with Translation</h3>
+              <div class="meta"><span class="stars">★★★★★</span><span class="price">PKR 4,250</span></div>
+              <div class="actions">
+                <a class="btn small" href="product.html">Details</a>
+                <a class="btn small primary" href="cart.html">Add</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card product">
+            <div class="img"><img src="assets/book-3.jpg" alt="Book"></div>
+            <div class="body">
+              <span class="chip">Kids</span>
+              <h3>Stories of the Prophets</h3>
+              <div class="meta"><span class="stars">★★★★☆</span><span class="price">PKR 1,899</span></div>
+              <div class="actions">
+                <a class="btn small" href="product.html">Details</a>
+                <a class="btn small primary" href="cart.html">Add</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><h4>Islamic Book Store</h4><div class="muted">Curated Islamic books & learning resources.</div></div>
+    <div><h4>Shop</h4><div><a href="shop.html">All books</a></div><div><a href="shop.html">New arrivals</a></div><div><a href="shop.html">Bundles</a></div></div>
+    <div><h4>Company</h4><div><a href="about.html">About</a></div><div><a href="contact.html">Contact</a></div><div><a href="faq.html">FAQ</a></div></div>
+    <div><h4>Account</h4><div><a href="account.html">Login / Register</a></div><div><a href="cart.html">Cart</a></div><div><a href="checkout.html">Checkout</a></div></div>
+  </div>
+  <div class="container" style="margin-top:18px;"><div class="muted">© 2026 Islamic Book Store.</div></div>
+</footer>
+
+</body>
+</html>
