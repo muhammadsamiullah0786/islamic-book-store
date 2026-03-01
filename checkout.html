@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Islamic Book Store — Checkout</title>
+  <title>Checkout — Islamic Book Store</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -12,117 +12,162 @@
   <div class="container nav">
     <a class="brand" href="index.html"><span class="logo">📚</span><span>Islamic Book Store<small>Checkout</small></span></a>
     <nav class="nav-links">
-      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="cart.html">Cart</a><a href="contact.html">Contact</a>
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn" href="cart.html">Back to cart</a>
+      <a class="btn cart-badge" href="cart.html" data-count="0">Cart</a>
+      <a class="btn primary" href="account.html">Account</a>
       <label class="btn menu-btn" for="menuToggle">Menu</label>
     </div>
   </div>
   <input id="menuToggle" type="checkbox" />
-  <div class="menu-panel"><div class="container">
-    <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="cart.html">Cart</a><a href="contact.html">Contact</a>
-  </div></div>
+  <div class="menu-panel">
+    <div class="container">
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="cart.html">Cart</a><a href="account.html">Account</a>
+    </div>
+  </div>
 </header>
 
 <main>
   <section class="page-head">
     <div class="container">
-      <div class="breadcrumb">Home / Checkout</div>
+      <div class="breadcrumb"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</div>
       <h1>Checkout</h1>
-      <div class="muted">Enter shipping and payment details.</div>
+      <div class="muted">Complete your order securely</div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container" style="display:grid; grid-template-columns: 1.2fr .8fr; gap:14px;">
-      <form class="card pad">
-        <h3 style="margin:0 0 10px;">Shipping</h3>
+  <!-- Success Message (Hidden by default) -->
+  <div id="success-message" class="section hidden">
+    <div class="container">
+      <!-- Will be filled by JavaScript -->
+    </div>
+  </div>
 
-        <div class="row">
-          <div class="field">
-            <label>First name</label>
-            <input class="input" placeholder="Ahmad" />
+  <!-- Checkout Form -->
+  <section id="checkout-container" class="section">
+    <div class="container" style="display:grid; grid-template-columns: 1fr 400px; gap:24px; align-items: start;">
+      <!-- Billing Details Form -->
+      <div class="card pad">
+        <h2 style="margin-bottom: 20px;">Billing Details</h2>
+        
+        <form id="checkout-form">
+          <div class="row">
+            <div class="field">
+              <label>First Name *</label>
+              <input name="firstName" class="input" type="text" required placeholder="Ahmed" />
+            </div>
+            <div class="field">
+              <label>Last Name *</label>
+              <input name="lastName" class="input" type="text" required placeholder="Khan" />
+            </div>
           </div>
+
           <div class="field">
-            <label>Last name</label>
-            <input class="input" placeholder="R." />
+            <label>Email Address *</label>
+            <input name="email" class="input" type="email" required placeholder="ahmed.khan@example.com" />
           </div>
-        </div>
 
-        <div class="row">
           <div class="field">
-            <label>Email</label>
-            <input class="input" placeholder="name@email.com" />
+            <label>Phone Number *</label>
+            <input name="phone" class="input" type="tel" required placeholder="+92 300 1234567" />
           </div>
+
           <div class="field">
-            <label>Phone</label>
-            <input class="input" placeholder="+92…" />
+            <label>Street Address *</label>
+            <input name="address" class="input" type="text" required placeholder="House 123, Street 45" />
           </div>
-        </div>
 
-        <div class="field">
-          <label>Address</label>
-          <input class="input" placeholder="Street, area, house no…" />
-        </div>
+          <div class="row">
+            <div class="field">
+              <label>City *</label>
+              <input name="city" class="input" type="text" required placeholder="Lahore" />
+            </div>
+            <div class="field">
+              <label>Postal Code</label>
+              <input name="postalCode" class="input" type="text" placeholder="54000" />
+            </div>
+          </div>
 
-        <div class="row">
           <div class="field">
-            <label>City</label>
-            <input class="input" placeholder="Rawalpindi" />
+            <label>Province / State *</label>
+            <select name="province" required>
+              <option value="">Select Province</option>
+              <option>Punjab</option>
+              <option>Sindh</option>
+              <option>Khyber Pakhtunkhwa</option>
+              <option>Balochistan</option>
+              <option>Gilgit-Baltistan</option>
+              <option>Azad Kashmir</option>
+            </select>
           </div>
+
           <div class="field">
-            <label>Postal code</label>
-            <input class="input" placeholder="46000" />
+            <label>Order Notes (Optional)</label>
+            <textarea name="notes" class="input" placeholder="Special delivery instructions..."></textarea>
           </div>
-        </div>
 
-        <div class="hr"></div>
+          <div class="hr"></div>
 
-        <h3 style="margin:0 0 10px;">Payment (UI only)</h3>
-        <div class="field">
-          <label>Payment method</label>
-          <select>
-            <option>Cash on Delivery</option>
-            <option>Card (Coming soon)</option>
-            <option>Bank Transfer (Coming soon)</option>
-          </select>
-        </div>
+          <h3 style="margin-bottom: 16px;">Payment Method</h3>
+          <div class="field" style="margin-bottom: 24px;">
+            <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface-2);">
+              <input type="radio" name="payment" value="cod" checked style="width: auto;" />
+              <div>
+                <strong>Cash on Delivery</strong>
+                <div class="muted" style="font-size: 0.875rem;">Pay when you receive your order</div>
+              </div>
+            </label>
+          </div>
 
-        <div class="field">
-          <label>Notes</label>
-          <textarea placeholder="Any delivery instructions…"></textarea>
-        </div>
+          <button id="place-order-btn" type="submit" class="btn primary large" style="width: 100%;">
+            Place Order
+          </button>
+        </form>
+      </div>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" href="cart.html">Back</a>
-          <button class="btn primary" type="button">Place order</button>
-        </div>
-        <div class="muted" style="font-size:12px; margin-top:10px;">
-          This is frontend only. Connect backend/payment later.
-        </div>
-      </form>
-
-      <aside class="card pad">
-        <h3 style="margin:0 0 10px;">Order Summary</h3>
-        <div style="display:flex; justify-content:space-between;"><span class="muted">Items</span><strong>2</strong></div>
-        <div style="display:flex; justify-content:space-between; margin-top:8px;"><span class="muted">Subtotal</span><strong>PKR 6,498</strong></div>
-        <div style="display:flex; justify-content:space-between; margin-top:8px;"><span class="muted">Shipping</span><strong>PKR 250</strong></div>
-        <div class="hr"></div>
-        <div style="display:flex; justify-content:space-between;"><span>Total</span><strong style="font-size:20px;">PKR 6,748</strong></div>
-        <div style="height:12px"></div>
-        <span class="badge">SSL • Secure checkout</span>
-      </aside>
+      <!-- Order Summary -->
+      <div id="order-summary" class="card pad" style="position: sticky; top: 100px;">
+        <!-- Will be filled by JavaScript -->
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="container" style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
-    <span class="muted">© 2026 Islamic Book Store.</span>
-    <span class="muted"><a href="faq.html">FAQ</a> • <a href="contact.html">Support</a></span>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Islamic Book Store</h4>
+        <div class="muted">Your trusted source for authentic Islamic knowledge and literature.</div>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="shop.html">All Books</a>
+        <a href="shop.html">New Arrivals</a>
+        <a href="shop.html">Best Sellers</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="account.html">My Account</a>
+        <a href="cart.html">Shopping Cart</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="muted">© 2026 Islamic Book Store. All rights reserved.</div>
+    </div>
   </div>
 </footer>
 
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/checkout.js"></script>
 </body>
 </html>

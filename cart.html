@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Islamic Book Store — Cart</title>
+  <title>Shopping Cart — Islamic Book Store</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -11,129 +11,125 @@
 <header class="header">
   <div class="container nav">
     <a class="brand" href="index.html"><span class="logo">📚</span><span>Islamic Book Store<small>Cart</small></span></a>
-    <nav class="nav-links">
+   <nav class="nav-links">
       <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn primary" href="checkout.html">Checkout</a>
+      <a class="btn cart-badge active" href="cart.html" data-count="0">Cart</a>
+      <a class="btn primary" href="account.html">Account</a>
       <label class="btn menu-btn" for="menuToggle">Menu</label>
     </div>
   </div>
   <input id="menuToggle" type="checkbox" />
-  <div class="menu-panel"><div class="container">
-    <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="checkout.html">Checkout</a>
-  </div></div>
+  <div class="menu-panel">
+    <div class="container">
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="cart.html" class="active">Cart</a><a href="account.html">Account</a>
+    </div>
+  </div>
 </header>
 
 <main>
   <section class="page-head">
     <div class="container">
-      <div class="breadcrumb">Home / Cart</div>
-      <h1>Your Cart</h1>
-      <div class="muted">Review items before checkout.</div>
+      <div class="breadcrumb"><a href="index.html">Home</a> / Cart</div>
+      <h1>Shopping Cart</h1>
+      <div class="muted">Review your items and proceed to checkout</div>
     </div>
   </section>
 
   <section class="section">
-    <div class="container" style="display:grid; grid-template-columns: 1.4fr .6fr; gap:14px;">
-      <div class="card pad">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Price</th>
-              <th>Qty</th>
-              <th>Total</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div style="display:flex; gap:10px; align-items:center;">
-                  <img src="assets/book-1.jpg" alt="Book" style="width:54px; height:54px; object-fit:cover; border-radius:12px; border:1px solid var(--line);">
-                  <div>
-                    <strong>Riyad-us-Saliheen</strong><br>
-                    <span class="muted" style="font-size:12px;">Hadith</span>
-                  </div>
-                </div>
-              </td>
-              <td>PKR 3,499</td>
-              <td>
-                <div class="qty">
-                  <button type="button">−</button>
-                  <strong>1</strong>
-                  <button type="button">+</button>
-                </div>
-              </td>
-              <td><strong>PKR 3,499</strong></td>
-              <td><a class="btn small danger" href="#">Remove</a></td>
-            </tr>
-            <tr>
-              <td>
-                <div style="display:flex; gap:10px; align-items:center;">
-                  <img src="assets/book-2.jpg" alt="Book" style="width:54px; height:54px; object-fit:cover; border-radius:12px; border:1px solid var(--line);">
-                  <div>
-                    <strong>Ar-Raheeq Al-Makhtum</strong><br>
-                    <span class="muted" style="font-size:12px;">Seerah</span>
-                  </div>
-                </div>
-              </td>
-              <td>PKR 2,999</td>
-              <td>
-                <div class="qty">
-                  <button type="button">−</button>
-                  <strong>1</strong>
-                  <button type="button">+</button>
-                </div>
-              </td>
-              <td><strong>PKR 2,999</strong></td>
-              <td><a class="btn small danger" href="#">Remove</a></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="hr"></div>
-
-        <div class="row">
-          <div class="field">
-            <label>Coupon code</label>
-            <input class="input" placeholder="e.g. RAMADAN10" />
-          </div>
-          <div class="field">
-            <label>&nbsp;</label>
-            <button class="btn" type="button">Apply</button>
-          </div>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" href="shop.html">Continue shopping</a>
-          <a class="btn primary" href="checkout.html">Proceed to checkout</a>
-        </div>
+    <div class="container">
+      <!-- Empty Cart Message -->
+      <div id="empty-cart" class="card pad hidden" style="text-align: center; padding: 64px 24px;">
+        <div style="font-size: 64px; margin-bottom: 16px; opacity: 0.5;">🛒</div>
+        <h2>Your cart is empty</h2>
+        <p class="muted" style="margin: 16px 0 24px;">Start adding some books to your cart!</p>
+        <a href="shop.html" class="btn primary large">Browse Shop</a>
       </div>
 
-      <aside class="card pad">
-        <h3 style="margin:0 0 10px;">Summary</h3>
-        <div style="display:flex; justify-content:space-between;"><span class="muted">Subtotal</span><strong>PKR 6,498</strong></div>
-        <div style="display:flex; justify-content:space-between; margin-top:8px;"><span class="muted">Shipping</span><strong>PKR 250</strong></div>
-        <div style="display:flex; justify-content:space-between; margin-top:8px;"><span class="muted">Discount</span><strong>PKR 0</strong></div>
-        <div class="hr"></div>
-        <div style="display:flex; justify-content:space-between;"><span>Total</span><strong style="font-size:20px;">PKR 6,748</strong></div>
-        <div style="height:12px"></div>
-        <a class="btn primary" style="width:100%" href="checkout.html">Checkout</a>
-        <div style="height:10px"></div>
-        <span class="badge">Secure payment</span>
-      </aside>
+      <!-- Cart Items -->
+      <div style="display:grid; grid-template-columns: 1fr 400px; gap:24px; align-items: start;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <h2>Cart Items</h2>
+            <button id="clear-cart-btn" class="btn danger small">Clear Cart</button>
+          </div>
+          <div id="cart-items">
+            <!-- Cart items will be rendered here -->
+          </div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div id="cart-summary" class="card pad hidden" style="position: sticky; top: 100px;">
+          <h3  style="margin-bottom: 16px;">Order Summary</h3>
+          
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span class="muted">Subtotal</span>
+            <strong id="subtotal">PKR 0</strong>
+          </div>
+          
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span class="muted">Shipping</span>
+            <strong id="shipping">PKR 0</strong>
+          </div>
+          
+          <div id="shipping-note" style="font-size: 0.813rem; margin-bottom: 16px; text-align: center;">
+          </div>
+          
+          <div class="hr"></div>
+          
+          <div style="display: flex; justify-content: space-between; font-size: 1.25rem; margin-bottom: 24px;">
+            <strong>Total</strong>
+            <strong id="total" style="color: var(--brand-light);">PKR 0</strong>
+          </div>
+          
+          <button id="checkout-btn" class="btn primary large" style="width: 100%;">
+            Proceed to Checkout
+          </button>
+          
+          <a href="shop.html" class="btn ghost" style="width: 100%; margin-top: 12px; justify-content: center;">
+            ← Continue Shopping
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="container" style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
-    <span class="muted">© 2026 Islamic Book Store.</span>
-    <span class="muted"><a href="faq.html">Help</a> • <a href="contact.html">Contact</a></span>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Islamic Book Store</h4>
+        <div class="muted">Your trusted source for authentic Islamic knowledge and literature.</div>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="shop.html">All Books</a>
+        <a href="shop.html">New Arrivals</a>
+        <a href="shop.html">Best Sellers</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="account.html">My Account</a>
+        <a href="cart.html">Shopping Cart</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="muted">© 2026 Islamic Book Store. All rights reserved.</div>
+    </div>
   </div>
 </footer>
 
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/cart.js"></script>
 </body>
 </html>
