@@ -4,8 +4,9 @@ A beautiful, modern static website for an Islamic bookstore. Built with pure HTM
 
 ## 🌐 Live Demo
 
-- **GitHub Pages:** Coming soon after deployment
-- **Netlify:** Coming soon after deployment
+- **GitHub Pages:** [https://muhammadsamiullah0786.github.io/islamic-book-store/](https://muhammadsamiullah0786.github.io/islamic-book-store/)
+- **Vercel:** [https://website-two-delta-38.vercel.app](https://website-two-delta-38.vercel.app)
+- **GitHub Repository:** [https://github.com/muhammadsamiullah0786/islamic-book-store](https://github.com/muhammadsamiullah0786/islamic-book-store)
 
 ## ✨ Features
 
